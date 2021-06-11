@@ -9,6 +9,7 @@ window.config(bg="black")
 
 city = StringVar
 
+
 def display_result():
 
     # initialize weather request from API
@@ -18,20 +19,20 @@ def display_result():
             "https://api.openweathermap.org/data/2.5/weather?q=" + get_city + "&appid=36e6aefc64df32f4ca03bd2cbd44d4d7")
         data = r.json()
         # display labels
-        display_temp = Label(window, text=int(data['main']['temp'] - 273.15), textvariable=temp, font='Helvetica',
+        display_temp = Label(window, text=int(data['main']['temp'] - 273.15), font='Helvetica',
                                                                                                  fg="black",
                                  bg="white")
         display_temp.place(x=200, y=110)
-        display_wind_speed = Label(window, text=str(data['wind']['speed']) + "KM/h",textvariable=wind_speed,
+        display_wind_speed = Label(window, text=str(data['wind']['speed']) + "KM/h",
         font='Helvetica',
                                    fg="black",
                                    bg="white")
         display_wind_speed.place(x=200, y=200)
-        display_humidity = Label(window, text=str(data['main']['humidity']), textvariable=humidity, font='Helvetica',
+        display_humidity = Label(window, text=str(data['main']['humidity']), font='Helvetica',
                                  fg="black",
                                  bg="white")
         display_humidity.place(x=200, y=150)
-        display_cloud_cover = Label(window, text=str(data['weather'][0]['main'] + " skies"),textvariable=cloud_clover,
+        display_cloud_cover = Label(window, text=str(data['weather'][0]['main'] + " skies"),
         font='Helvetica',
                                     fg="black",
                                     bg="white")
